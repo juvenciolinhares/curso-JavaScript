@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 5.2rem;
+        }
+        div.res{
+            margin-top: 2vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> + 
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div class="res">Resultado</div>
+    <script>
+         var tnt1 = document.getElementById('txtn1')
+         var tnt2 = document.getElementById('txtn2')
+         tnt1.addEventListener('mouseenter', entrarn1)
+         tnt1.addEventListener('mouseout', sairn1)
+         tnt2.addEventListener('mouseenter', entrarn2)
+         tnt2.addEventListener('mouseout', sairn2)
+         function entrarn1(){
+            txtn1.style.background='pink'
+         }
+         function sairn1(){
+            txtn1.style.background='white'
+         }
+         function entrarn2(){
+            txtn2.style.background='pink'
+         }
+         function sairn2(){
+            txtn2.style.background='white'
+         }
+
+        
+     function somar(){
+        tnt1 = document.getElementById('txtn1')
+        var tnt2 = document.querySelector('input#txtn2')
+        var res = document.querySelector('div.res')
+
+        //tnt1 e tnt2, por padrão vem como texto, então eu converto pra NUmber:
+        var n1 = Number(tnt1.value)
+        var n2 = Number(tnt2.value)
+        var sum = n1 + n2
+        res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${sum}</strong>`
+
+     }
+     
+     
+       
+    </script>
+    
+</body>
+</html>
